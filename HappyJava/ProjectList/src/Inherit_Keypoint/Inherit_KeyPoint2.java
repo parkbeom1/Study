@@ -27,23 +27,22 @@ class Product2 {
 		this.bonuspoint = (int)(price / 10.0);
 	}
 }
-
-class Computer2 extends Product2 {
-	
-	Computer2() {
-		super(500);
-	}
-	public String toString() {
-		return "컴퓨터";
-	}
-}
 class Tv2 extends Product2 {
 	
 	Tv2() {
-		super(450);
+		super(500);
 	}
 	public String toString() {
-		return "티비";
+		return "Tv";
+	}
+}
+class Computer2 extends Product2 {
+	
+	Computer2() {
+		super(400);
+	}
+	public String toString() {
+		return "컴퓨터";
 	}
 }
 class Radio2 extends Product2 {
@@ -58,19 +57,18 @@ class Radio2 extends Product2 {
 
 class Buyer2 {
 	int money;
-	int bonus;
-	Product2 Cart[];
+	int bonuspoint;
+	Product2[] Cart;
 	int index = 0;
 	
-	
-	Buyer2(int money,int bonus){
+	Buyer2(int money,int bonuspoint){
 		this.money = money;
-		this.bonus = bonus;
+		this.bonuspoint = bonuspoint;
 		Cart = new Product2[10];
 	}
 	
-	Buyer2(){
-		this(5000,0);
+	Buyer2() {
+		this(10000,0);
 	}
 	
 	public void buy(Product2 product) {
@@ -79,52 +77,57 @@ class Buyer2 {
 			System.out.println("잔액이 부족합니다.");
 		}
 		if(this.index >= 10) {
-			System.out.println("더이상 담을수없습니다.");
+			System.out.println("더이상 물건을 담을수 없습니다.");
 		}
 		
 		Cart[index++] = product;
 		
-		this.money -= product.price;
-		this.bonus += product.bonuspoint;
 		
-		System.out.println("구입 물품 " + product.toString());
-		System.out.println("내 잔액  " + this.money);
-		System.out.println("내 누적 포인트 " + this.bonus);
+		// 실제 구매
+		this.money -= product.price;
+		this.bonuspoint += product.bonuspoint;
+		
+		
+		System.out.println("구매 물품은 " + product.toString());
+		System.out.println("남은 잔액은 " + this.money);
+		System.out.println("누적 포인트 는 " + this.bonuspoint);
 	}
 	
 	public void summary() {
 		int totalPrice = 0;
-		int totalBonous = 0;
+		int totalbonuspoint = 0;
 		String totalList = "";
 		
-		for(int i = 0; i < index; i ++) {
+		for(int i = 0 ; i < index; i ++) {
 			totalPrice += Cart[i].price;
-			totalBonous += Cart[i].bonuspoint;
+			totalbonuspoint += Cart[i].bonuspoint;
 			totalList += Cart[i].toString();
+			
 		}
-		System.out.println("내 총 구입 목록 " + totalList);
-		System.out.println("총 구입 금액 " + totalPrice);
-		System.out.println("내 총 누적포인트 " + totalBonous);
+			
+		System.out.println("총 구매 금액은 " + totalPrice);
+		System.out.println("총 누적 포인트는 " + totalbonuspoint);
+		System.out.println("총 구매 목록은 " + totalList);
 	}
 }
-
 public class Inherit_KeyPoint2 {
 	public static void main(String[] args) {
 		Buyer2 buyer = new Buyer2();
 		Tv2 tv = new Tv2();
-		Radio2 radio = new Radio2();
 		Computer2 computer = new Computer2();
+		Radio2 radio = new Radio2();
 		
-		buyer.buy(tv);
 		buyer.buy(radio);
 		buyer.buy(radio);
 		buyer.buy(radio);
 		buyer.buy(radio);
-		buyer.buy(tv);
-		buyer.buy(tv);
-		buyer.buy(tv);
+		buyer.buy(radio);
 		buyer.buy(computer);
 		buyer.buy(computer);
+		buyer.buy(computer);
+		buyer.buy(tv);
+		buyer.buy(tv);
+
 		buyer.summary();
 	}
 }

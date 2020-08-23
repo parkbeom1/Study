@@ -16,43 +16,44 @@ class Product {
 	int price;
 	int bonuspoint;
 	
-	Product(int price){
+	Product (int price) {
 		this.price = price;
-		this.bonuspoint = (int)(price * 10.0);
-	}
-}
-
-class Tv extends Product {
-	
-	Tv(){
-		super(500);
-	}
-	public String toString() {
-		return "Tv 구입";
+		this.bonuspoint = (int)(price / 10.0);
 	}
 }
 
 class Computer extends Product {
 	
-	Computer(){
+	Computer (){
+		super(500);
+	}
+	public String toString() {
+		return "컴퓨터";
+	}
+}
+
+class Tv extends Product {
+	
+	Tv (){
 		super(350);
 	}
 	public String toString() {
-		return "컴퓨터 구입";
+		return "Tv";
 	}
 }
 
 class Radio extends Product {
 	
-	Radio(){
-		super(250);
+	Radio (){
+		super(200);
 	}
 	public String toString() {
-		return "라디오 구입";
+		return "라디오";
 	}
 }
+
 class Buyer {
-	int money = 2000;
+	int money;
 	int bonuspoint;
 	
 	Buyer(int money , int bonuspoint) {
@@ -60,26 +61,28 @@ class Buyer {
 		this.bonuspoint = bonuspoint;
 	}
 	
-	public void Buy(Product product) {
+	public void buy(Product product) {
+		
 		if(this.money < product.price) {
 			System.out.println("잔액이 부족합니다.");
-		} else  {
+		} else {
 			this.money -= product.price;
-			this.bonuspoint += product.price;
-			System.out.println("구매한 물건 목록은 : " + product.toString());
-			System.out.println("남은 재산 : " + this.money);
-			System.out.println("내 누적 포인트 : " + this.bonuspoint);
+			this.bonuspoint += product.bonuspoint;
 		}
+		System.out.println("구매한 물건은 " + product.toString());
+		System.out.println("남은 잔액은  " + this.money);
+		System.out.println("누적 포인트는 " + this.bonuspoint);
 	}
 }
 public class Inherit_Keypoint {	
 	public static void main(String[] args) {
-		Buyer buyer = new Buyer(2000,0);
+		Buyer buyer = new Buyer(5000,0);
 		Tv tv = new Tv();
-		Radio radio = new Radio();
 		Computer computer = new Computer();
-		buyer.Buy(tv);
-		buyer.Buy(radio);
-		buyer.Buy(computer);
+		Radio radio = new Radio();
+		
+		buyer.buy(tv);
+		buyer.buy(computer);
+		buyer.buy(radio);
 	}
 }
