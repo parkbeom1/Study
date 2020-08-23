@@ -1,0 +1,31 @@
+git config --global user.name "계정이름"
+git config --global user.email "계정이메일"
+cat.gitconfig
+git config --list
+git init  // 깃 프로젝트 초기화
+git clone "깃허브주소"
+git status   // 파일상태 
+git add 파일이름
+git add "문서이름"
+git add .    //  변경사항 모두 추가 
+git add *    
+git commit -m "메시지"  
+git log       // 커밋에 대한 기록
+git log orgin/master //특정 원격 저장소 기록 볼수있음 
+git log --stat // 각 커밋에 대한 통계 정보 
+git reset --hard 커밋주소 // 이전단계 삭제 
+git remote -v // 전체목록확인
+git remote add origin 깃허브주소
+git remote rm temp // 특정 원격 저장소 제거  
+git push origin master // 원격저장소에 넣음 
+git push -f  // 강제 
+git pull origin master // 원격저장소에서 빼내옴
+git branch  // 브랜치 개수확인
+git branch devleop // 브랜치 develop 이름만듬 
+git checkout develop  // 브랜치 이동
+git merge 브랜치이름 // 합치기 
+README  // 프로젝트 소개글 작성
+cd.. // 상위디렉터리로 이동 
+makdr 파일이름 // 파일 생성 
+cat Hello.txt //문서내용보기
+vim Hello.txt // 문서 내용 변경
