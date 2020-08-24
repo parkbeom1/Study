@@ -29,3 +29,5 @@ cd.. // 상위디렉터리로 이동
 makdr 파일이름 // 파일 생성 
 cat Hello.txt //문서내용보기
 vim Hello.txt // 문서 내용 변경
+
+ remote origin already exists.

@@ -76,7 +76,6 @@ class Buyer2 {
 			System.out.println("더 이상 제품을 담을수 없습니다.");
 			return;
 		}
-		
 		// 장바구니에 제품들을  담아보자 
 		// Product2 product = 자식객체들의 참조변수 들을 가져와서
 		// Cart[] 배열에 담는데 index++ 하나하나씩 담는다.
@@ -102,11 +101,13 @@ class Buyer2 {
 		int totalbonuspoint = 0;
 		String productlist ="";
 		
+		
 		// 내가 넣은 제품들이 있는 Cart[index] 까지 
 		for(int i = 0; i < index; i++) {
 			totalprice += Cart[i].price;
 			totalbonuspoint += Cart[i].bonuspoint;
 			productlist += Cart[i].toString();
+			
 		}
 		
 		System.out.println("*********************");

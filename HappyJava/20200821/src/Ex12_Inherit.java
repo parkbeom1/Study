@@ -171,7 +171,6 @@ public class Ex12_Inherit {
 		// Buy(product product) = 자식 참조변수들이 올수있다.
 		// 업캐스팅 
 		buyer.Buy(washmachine);
-
-		
+	
 	}
 }

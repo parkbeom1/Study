@@ -1,0 +1,22 @@
+
+ 싱글톤 패턴 - private으로 막아놓은 생성자를
+public static 으로 메소드로 하나 가져와서  객체주소가 null이면 
+생성자를 생성함  리턴타입을 주소객체  
+public으로  private으로된 생성자를 호출할수있다.
+
+
+
+// 객체 생성하지 못함
+class A {
+	private static A a;
+	private static  A() {
+   
+	}
+	public static A m() {
+	 if(a == null) {
+	a = new A();
+	}
+	return a;
+	}
+}
+

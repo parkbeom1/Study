@@ -3,7 +3,8 @@ package abstract_OOP;
 	추상클래스 
 	>> 일반화 되고 미완성 클래스 
 	1. 완성된 코드 + 미완성 코드
-	2. 완성(함수) 실행 블록이 있는 함수  + 미완성(함수) 실행 블럭이 없는 함수 (public void run(); (x) {}
+	2. 완성(함수) 실행 블록이 있는 함수  + 미완성(함수) 실행 블럭이 없는 함수
+	 (public void run(); (x) {}
 	3. 완성된 클래스 (new 가능) - 미완성 클래스 ( 스스로객체 생성이 불가 )
 
 	정리
@@ -38,7 +39,7 @@ class Hcar2 extends Car2 {
 	@Override
 	void run() {
 		int pos = 2;
-		System.out.println("sop : " + this.pos);
+		System.out.println("pos : " + this.pos);
 	}
 	void stop() {
 		System.out.println("자식이 멈춤니다.");
@@ -65,10 +66,11 @@ public class Abstract_class {
 		//////////////////////////////////////////
 		
 		// 다형성 ( 주소값을 받을수있다. )
-		Car2 ca3 = new Child2(); // 다형성 부모타입의 객체는 자식타입의 객체를 받을수있다.
-		
+		Car2 ca3 = new Child2(); // 다형성 부모타입의 객체는 자식타입의 객체를 받을수있다.	
 		ca3.run(); // 부모는 자기타입의 객체만 볼수있다.
-		ca3.stop(); // 자식객체의 메소드가 오버라이딩 된다.
-		
+		ca3.stop(); // 자식객체의 메소드가 오버라이딩 된다. 
+		// ****업캐스팅으로 부모 타입으로 접근 ... 그자원이 추상함수 .... 자식에서 반드시 재정의
+		// 부모타입으로 접근해도 재정의된 함수가 호출된다.
+		ca3.run();  // 부모 자기껄 호출함 
 	}
 }
