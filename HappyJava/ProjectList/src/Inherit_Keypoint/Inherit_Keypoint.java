@@ -16,7 +16,7 @@ class Product {
 	int price;
 	int bonuspoint;
 	
-	Product (int price) {
+	Product(int price) {
 		this.price = price;
 		this.bonuspoint = (int)(price / 10.0);
 	}
@@ -24,28 +24,26 @@ class Product {
 
 class Computer extends Product {
 	
-	Computer (){
+	Computer(){
 		super(500);
 	}
 	public String toString() {
 		return "컴퓨터";
 	}
 }
-
 class Tv extends Product {
 	
-	Tv (){
-		super(350);
+	Tv(){
+		super(400);
 	}
 	public String toString() {
 		return "Tv";
 	}
 }
-
 class Radio extends Product {
 	
-	Radio (){
-		super(200);
+	Radio(){
+		super(250);
 	}
 	public String toString() {
 		return "라디오";
@@ -56,7 +54,7 @@ class Buyer {
 	int money;
 	int bonuspoint;
 	
-	Buyer(int money , int bonuspoint) {
+	Buyer(int money , int bonuspoint){
 		this.money = money;
 		this.bonuspoint = bonuspoint;
 	}
@@ -69,20 +67,22 @@ class Buyer {
 			this.money -= product.price;
 			this.bonuspoint += product.bonuspoint;
 		}
-		System.out.println("구매한 물건은 " + product.toString());
-		System.out.println("남은 잔액은  " + this.money);
+		
+		System.out.println("구입 물건은 " + product.toString());
+		System.out.println("남은 잔액은 " + this.money);
 		System.out.println("누적 포인트는 " + this.bonuspoint);
 	}
 }
 public class Inherit_Keypoint {	
 	public static void main(String[] args) {
-		Buyer buyer = new Buyer(5000,0);
+		Buyer buyer = new Buyer(10000,0);
 		Tv tv = new Tv();
-		Computer computer = new Computer();
 		Radio radio = new Radio();
+		Computer computer = new Computer();
 		
 		buyer.buy(tv);
-		buyer.buy(computer);
 		buyer.buy(radio);
+		buyer.buy(computer);
+		
 	}
 }
