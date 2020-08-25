@@ -2,7 +2,7 @@ package kr.or.bit;
 
 import java.util.ArrayList;
 
-public class Ex03_ArrayList_Object {
+public class Ex03_ArrayList_Object  {
 	public static void main(String[] args) {
 		// 사원 1명을 만드세요
 		Emp emp = new Emp(100,"김유신","군인");
@@ -37,7 +37,7 @@ public class Ex03_ArrayList_Object {
 			Object obj = elist.get(i);
 				if(emp instanceof Object) {
 					Emp emp1=(Emp)obj;
-		System.out.println(emp1.getEmpno() + emp1.getEname() + emp1.getJob());
+						System.out.println(emp1.getEmpno() + emp1.getEname() + emp1.getJob());
 				}		
 				for(Object e : elist) {
 					Emp em = (Emp)e;			

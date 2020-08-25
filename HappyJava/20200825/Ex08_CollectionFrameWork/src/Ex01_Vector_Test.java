@@ -182,8 +182,54 @@ public class Ex01_Vector_Test {
 		for(Object obj : arr10) {
 			System.out.println(obj);
 		}	
-		ArrayList<Integer> arr11 = new ArrayList<Integer>();
+		ArrayList<Integer> arr11 = new ArrayList<Integer>(2);
 
+		 arr11.add(0, 5); // 0번쨰 인덱스의 값은 5
+		 arr11.add(1, 2);
+		 System.out.println(arr11.toString()); // [5 , 2] 
+		 
+		Vector<String> v4 = new Vector<String>(10);	 
+			v4.add("가");
+			v4.add("나");
+			v4.add("다");
+			v4.add("라");
+			v4.add("마");
+			v4.add("바");
+			v4.add("사");
+			v4.add("라");
+			v4.add("라");
+			v4.add("라");
+			v4.add("라");
+			v4.add("라");
+			v4.add("라");
 			
-		}
+			for(int i = 0 ; i < v4.size(); i++) {
+			}
+			System.out.println(v4.toString());
+			System.out.println(v4.capacity());
+		}	
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -96,15 +96,19 @@ class C {					// 다향성 : 부모타입은 자식타입의 주소를 받을수있다.
 	void method3(F f) {
 		f.m();
 	}
+	
+	
+	// 이게 더 효율적이다 밑에 있는 코드가 
+	void method (Icall ic) {
+	
+	}
 	*/
 }
 public class Ex05_User_Provider {
 	public static void main(String[] args) {
 		C c = new C();
 		D d = new D();
-		F f = new F();
-
-		
+		F f = new F();	
 		c.method(d);
 		c.method(f);
 		// 인터페이스 부모 타입을 받으면 재정의한 자식들의 주소를 참조할수있다. 

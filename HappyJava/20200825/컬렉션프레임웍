@@ -4,17 +4,15 @@
 다수의 데이터를 쉽게 처리할수있는 방법을 제공하는 클래스들로 구성
 
 컬렉션 : 다수의 데이터
-프레임웍 : 표준화한 설계 (표준화=기준)
-
-수많은 인터페이스와 클래스들을 미리 만들어놓음
+프레임웍 : 표준화(기준화)한 설계 (표준화=기준)
+컬렉션 프레임워크 : 수많은 인터페이스와 클래스들을 미리 만들어놓음
 
 Collection 인터페이스  - 대다수의 약속을 만들어놓음  
 
 확장해놓은게  List 와 Set
-List - 줄을서세요 . 순서가 있는 데이터의집합 , 데이터의 중복을 허용한다. - 번호표로 중복을 알아낸다  ex) 대기자명단 Vector ,  ArrayList , LinkedList , Stack  
-Set - 원안에 들어가세요 . 순서가없다 , 중복을 허용하지 않는다. ex) 양의집합  HashSet , TreeSet 
+List - 줄을서세요 . 순서가 있는 데이터의집합 , 데이터의 중복을 허용한다. - 번호표로 중복을 알아낸다  ex) 대기자명단 Vector,ArrayList,LinkedList,Stack  
+Set - 원안에 들어가세요.순서가없다,중복을 허용하지 않는다.ex) 양의집합  HashSet , TreeSet 
 Map - 우편번호 - key 02 value 서울  
-
 ArrayList , LinkedList는  List를 구현  순서가있는 데이터의 집합  그래서  쓰는 함수가 똑같다  
  동기화(synchronization)-스택이 여러개 이다. 
  동기화의 전제 조건 - 실행하는 애들이 여러개  Thread 
@@ -55,9 +53,7 @@ v
  class Node {
  	Node next;
  	Object obj;
- }
-
-
+}
 컬렉션 프레임 웍 의 핵심 인터페이스
 Stack 클래스 만들어본다
 

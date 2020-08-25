@@ -81,7 +81,6 @@ public class Ex02_ArrayList {
 		List li2 = li.subList(0, 2); // sublist 만들어주는 데이터 순서가 있는 데이터 집합이다.
 		System.out.println(li2.toString()); // 0번쨰부터 1번쨰까지 뺴오다
 		
-		
 		ArrayList alist = new ArrayList();
 		alist.add(50);
 		alist.add(1);
@@ -90,7 +89,6 @@ public class Ex02_ArrayList {
 		alist.add(46);
 		alist.add(3);
 		alist.add(15);
-		
 		System.out.println(alist.toString());
 		
 		Collections.sort(alist); // 초급자는 절대 쓰면 안된다. >> 중급자 이상만 

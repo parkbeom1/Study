@@ -14,11 +14,9 @@ class Empdata {
 		this.numbers = new int[10];
 		this.elist = new ArrayList(); // li 가 들어가게됨 
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
