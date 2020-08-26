@@ -4,6 +4,7 @@ public class Generic {
 	public static void main(String[] args) {
 		Powder power = new Powder();
 		GenericTest<Powder> powdergeneric = new GenericTest<>();
+	
 		powdergeneric.setMaterial(power);
 		System.out.println(powdergeneric);
 		
